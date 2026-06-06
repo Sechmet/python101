@@ -20,9 +20,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Alternative entry point."""
+"""Commands package initialization."""
 
-from .main import run
+from .ch01 import ch01
+from .ch02 import ch02
 
-if __name__ == "__main__":
-    run()
+__all__ = [
+    "ch01",
+    "ch02",
+]

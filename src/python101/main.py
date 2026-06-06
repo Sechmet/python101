@@ -22,11 +22,32 @@
 
 """Main entry point."""
 
+import typer
 
-def main():
+from .commands import ch01
+from .commands import ch02
+
+app = typer.Typer(
+    name="python101",
+    help="A dynamic learning environment and development framework for Python, leveraging Typer for an interactive command-line interface.",
+    add_completion=False,
+)
+
+app.command(ch01)
+app.command(ch02)
+
+
+@app.callback(invoke_without_command=True)
+def main(ctx: typer.Context):
     """Description of the function."""
-    print("Hello from python101!")
+    if ctx.invoked_subcommand is None:
+        print("Hello from python101! (Main Menu)")
+
+
+def run():
+    """Run the Typer app."""
+    app()
 
 
 if __name__ == "__main__":
-    main()
+    run()

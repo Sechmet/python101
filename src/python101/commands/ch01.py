@@ -20,9 +20,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Alternative entry point."""
+"""Chapter 01: Getting Started."""
 
-from .main import run
+import typer
 
-if __name__ == "__main__":
-    run()
+app = typer.Typer(help="Chapter 1: Getting Started")
+
+
+@app.command()
+def ch01():
+    """Chapter 01 entry point."""
+    print("Welcome to Chapter 1!")

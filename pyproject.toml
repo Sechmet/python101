@@ -5,10 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "python101"
 version = "0.1.0"
-description = "Add your description here"
+description = "A dynamic learning environment and development framework for Python, leveraging Typer for an interactive command-line interface."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "loadenv>=0.1.1",
     "typer>=0.26.7",
 ]
 [tool.uv]
@@ -20,4 +21,4 @@ build = [
 ]
 
 [project.scripts]
-learn = "python101.main:main"
+learn = "python101.main:run"
